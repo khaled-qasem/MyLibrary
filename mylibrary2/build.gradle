@@ -41,6 +41,40 @@ android {
         androidTest.resources.srcDirs += 'src/androidTest/res'
     }
 
+    flavorDimensions "default"
+
+    productFlavors {
+        devel {
+            dimension "default"
+
+            buildConfigField 'boolean', 'DEBUG_ENABLED', 'true'
+
+            //Api v1
+            buildConfigField 'String', 'API_V1', '"api/v1/"'
+
+            //Gamiphy Domain
+            buildConfigField 'String', 'GAMIPHY_API_DOMAIN', '"https://test.gamiphy.co/"'
+
+            //Bot api
+            buildConfigField 'String', 'BOT_API', '".test.bot.gamiphy.co/"'
+        }
+
+        prod {
+            dimension "default"
+
+            buildConfigField 'boolean', 'DEBUG_ENABLED', 'false'
+
+            //Api v1
+            buildConfigField 'String', 'API_V1', '"api/v1/"'
+
+            //Gamiphy Domain
+            buildConfigField 'String', 'GAMIPHY_API_DOMAIN', '"https://api.gamiphy.co/"'
+
+            //Bot api
+            buildConfigField 'String', 'BOT_API', '".bot.gamiphy.co/"'
+        }
+    }
+
 }
 
 dependencies {
