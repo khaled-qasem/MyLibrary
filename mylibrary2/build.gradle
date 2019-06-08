@@ -11,7 +11,7 @@ repositories {
 }
 
 group = 'com.github.khaled-qasem'
-version = '1.0'
+version = '1.4'
 
 
 android {
@@ -41,39 +41,39 @@ android {
         androidTest.resources.srcDirs += 'src/androidTest/res'
     }
 
-    flavorDimensions "default"
-
-    productFlavors {
-        devel {
-            dimension "default"
-
-            buildConfigField 'boolean', 'DEBUG_ENABLED', 'true'
-
-            //Api v1
-            buildConfigField 'String', 'API_V1', '"api/v1/"'
-
-            //Gamiphy Domain
-            buildConfigField 'String', 'GAMIPHY_API_DOMAIN', '"https://test.gamiphy.co/"'
-
-            //Bot api
-            buildConfigField 'String', 'BOT_API', '".test.bot.gamiphy.co/"'
-        }
-
-        prod {
-            dimension "default"
-
-            buildConfigField 'boolean', 'DEBUG_ENABLED', 'false'
-
-            //Api v1
-            buildConfigField 'String', 'API_V1', '"api/v1/"'
-
-            //Gamiphy Domain
-            buildConfigField 'String', 'GAMIPHY_API_DOMAIN', '"https://api.gamiphy.co/"'
-
-            //Bot api
-            buildConfigField 'String', 'BOT_API', '".bot.gamiphy.co/"'
-        }
-    }
+//    flavorDimensions "default"
+//
+//    productFlavors {
+//        devel {
+//            dimension "default"
+//
+//            buildConfigField 'boolean', 'DEBUG_ENABLED', 'true'
+//
+//            //Api v1
+//            buildConfigField 'String', 'API_V1', '"api/v1/"'
+//
+//            //Gamiphy Domain
+//            buildConfigField 'String', 'GAMIPHY_API_DOMAIN', '"https://test.gamiphy.co/"'
+//
+//            //Bot api
+//            buildConfigField 'String', 'BOT_API', '".test.bot.gamiphy.co/"'
+//        }
+//
+//        prod {
+//            dimension "default"
+//
+//            buildConfigField 'boolean', 'DEBUG_ENABLED', 'false'
+//
+//            //Api v1
+//            buildConfigField 'String', 'API_V1', '"api/v1/"'
+//
+//            //Gamiphy Domain
+//            buildConfigField 'String', 'GAMIPHY_API_DOMAIN', '"https://api.gamiphy.co/"'
+//
+//            //Bot api
+//            buildConfigField 'String', 'BOT_API', '".bot.gamiphy.co/"'
+//        }
+//    }
 
 }
 
@@ -87,28 +87,28 @@ dependencies {
     implementation"androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+//
+//task sourcesJar(type: Jar) {
+//    classifier = 'sources'
+//    from android.sourceSets.main.java.sourceFiles
+//}
+//
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.sourceFiles
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
+//
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//
+//task classesJar(type: Jar) {
+//    from "$buildDir/intermediates/classes/release"
+//}
 
-task sourcesJar(type: Jar) {
-    classifier = 'sources'
-    from android.sourceSets.main.java.sourceFiles
-}
-
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.sourceFiles
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-task classesJar(type: Jar) {
-    from "$buildDir/intermediates/classes/release"
-}
-
-artifacts {
-    archives classesJar
-    archives javadocJar
-    archives sourcesJar
-}
+//artifacts {
+//    archives classesJar
+//    archives javadocJar
+//    archives sourcesJar
+//}
