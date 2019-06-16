@@ -10,8 +10,8 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 
-group = 'com.github.khaled-qasem'
-version = '1.4'
+group = 'org.bitbucket.Khaled_Alqerem'
+version = '1.5'
 
 
 android {
